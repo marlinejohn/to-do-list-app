@@ -19,4 +19,11 @@ function newItem(){
   
       $('#list').on('dblclick', 'li', crossOut);
 
+       //  Adding the delete button "X":
+    let crossOutButton = $('<button>X</button>');
+    crossOutButton.click(deleteListItem);
+    li.append(crossOutButton);
+
+
+
 }
