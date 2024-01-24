@@ -1,11 +1,11 @@
 function newItem(){
-    console.log("BUtton clicked!")
     //  Adding a new item to the list of items:
     let inputValue = $('#input').val();
+    let li = $('<li></li>');
+
     if (inputValue === '') {
         alert('You must write something!');
       } else{
-        let li = $('<li></li>');
         li.text(inputValue);
 
         let list = $('#list');
@@ -14,14 +14,15 @@ function newItem(){
 
       // Crossing out an item from the list of items:
     function crossOut() {
-        $(this).toggleClass('strike');
+        li.toggleClass('strike');
       }
   
-      $('#list').on('dblclick', 'li', crossOut);
+      li.on('dblclick', crossOut);
 
-       //  Adding the delete button "X":
-    let crossOutButton = $('<button>X</button>');
-    crossOutButton.click(deleteListItem);
+       //  Adding the delete button:
+    let crossOutButton = $('<button></button>');
+    crossOutButton.text('X');
+    crossOutButton.on('click', deleteListItem);
     li.append(crossOutButton);
 
     // Adding delete items function and delete class
