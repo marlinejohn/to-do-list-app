@@ -1,4 +1,5 @@
 function newItem(){
+    console.log("BUtton clicked!")
     //  Adding a new item to the list of items:
     let inputValue = $('#input').val();
     if (inputValue === '') {
@@ -10,5 +11,12 @@ function newItem(){
         let list = $('#list');
         list.append(li);
       }
+
+      // Crossing out an item from the list of items:
+    function crossOut() {
+        $(this).toggleClass('strike');
+      }
+  
+      $('#list').on('dblclick', 'li', crossOut);
 
 }
