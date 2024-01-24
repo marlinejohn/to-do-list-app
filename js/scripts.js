@@ -2,13 +2,14 @@ function newItem(){
     //  Adding a new item to the list of items:
     let inputValue = $('#input').val();
     let li = $('<li></li>');
+    let list = $('#list');
 
     if (inputValue === '') {
         alert('You must write something!');
       } else{
         li.text(inputValue);
 
-        let list = $('#list');
+        
         list.append(li);
       }
 
@@ -29,5 +30,8 @@ function newItem(){
     function deleteListItem() {
         li.addClass('delete');
       }
+
+    //   Method to change order of list items
+     $('#list').sortable();
 
 }
